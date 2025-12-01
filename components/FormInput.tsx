@@ -1,28 +1,40 @@
-import { Text, TouchableOpacity, TouchableOpacityProps, StyleSheet } from "react-native"
+import { View, Text, TextInput, TextInputProps, StyleSheet } from "react-native"
 
-type FromButtonProps = TouchableOpacityProps & {
-  label: string;
+type FormInputProps = TextInputProps & {
+    label: string;
 }
-export const FromButton = ({ label, style, ...props }: FromButtonProps) => {
+
+export const FormInput = ({label, style, ...props}: FormInputProps) => {
   return (
-    <TouchableOpacity {...props} style={[style, styles.button]}>
-      <Text style={styles.Text}>{label}</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+        <Text style={styles.label}>{label}</Text>
+        <TextInput
+            {...props}
+            style={[styles.input, style]}
+        />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-button:{
-  width: '100%',
-  borderRadius: 8,
-  paddingVertical: 12,
-  backgroundColor: '#007bff',
-  alignItems: 'center',
-  justifyContent: 'center',
-},
-Text:{
-  color: '#fff',
-  fontWeight: '700',
+  container:{
+    width: '100%',
+    marginBottom: 16,
+  },
+  label:{
+    fontSize: 14,
+    color: 'black',
+    marginBottom: 4,
+  },
+  input:{
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
     fontSize: 16,
-}
+    backgroundColor: '#fff',
+    color: 'black',
+  }
+
 })

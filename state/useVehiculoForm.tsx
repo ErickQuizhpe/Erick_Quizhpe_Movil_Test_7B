@@ -5,9 +5,9 @@ export const TOTAL_STEPS = 3;
 
 export const useVehiculoForm = () => {
   
-    const [vehicle, setVehicle] = useState<Vehiculo>(emptyVehicle);
+    const [vehiculo, setVehiculo] = useState<Vehiculo>(emptyVehicle);
     const [step, setStep] = useState(0);
-    const [registeredVehicles, setRegisteredVehicles] = useState<Vehiculo[]>([]);
+    const [registeredVehiculos, setRegisteredVehiculos] = useState<Vehiculo[]>([]);
     const [showList, setShowList] = useState(false);
 
     const goToStep = (target: number) => {
@@ -15,7 +15,7 @@ export const useVehiculoForm = () => {
     };
 
     const updateField = (field: keyof Vehiculo, value: string) => {
-        setVehicle(prev => ({
+        setVehiculo(prev => ({
                 ...prev,
                 [field]: value
         }));
@@ -25,26 +25,26 @@ export const useVehiculoForm = () => {
     
     const prevStep = () => goToStep(step - 1);
     
-    const registerVehicle = () => {
-        setRegisteredVehicles(prev => [...prev, vehicle]);
+    const registerVehiculo = () => {
+        setRegisteredVehiculos(prev => [...prev, vehiculo]);
         setShowList(true);
     }
 
     const reset = () => {
-        setVehicle(emptyVehicle);
+        setVehiculo(emptyVehicle);
         setStep(0);
         setShowList(false);
     }
   
     return {
-        vehicle, 
+        vehiculo, 
         step, 
         nextStep, 
         prevStep, 
         updateField, 
         reset, 
-        registerVehicle,
-        registeredVehicles,
+        registerVehiculo,
+        registeredVehiculos,
         showList
     };
 }
