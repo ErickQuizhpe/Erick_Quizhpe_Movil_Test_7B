@@ -50,10 +50,12 @@ export const VehiculoSummaryScreen = ({ vehiculo, onRegister, onBack }: Props) =
                 <FromButton
                     label="Regresar"
                     onPress={onBack}
+                    style={{ marginBottom: 12 }}
                 />
                 <FromButton
                     label="Registrar"
                     onPress={onRegister}
+                    
                 />
             </View>
         </ScrollView>
