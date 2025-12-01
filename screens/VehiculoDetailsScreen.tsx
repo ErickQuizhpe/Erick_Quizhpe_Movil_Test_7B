@@ -52,11 +52,11 @@ export const VehiculoDetailsScreen = ({ vehiculo, onChange, onNext, onBack }: Pr
                 placeholder="Ingrese el tipo de gasolina"
             />
 
-            <View style={styles.buttonContainer}>
+            <View >
                 <FromButton
                     label="Regresar"
                     onPress={onBack}
-                    style={styles.backButton}
+                    style={{ marginBottom: 12 }}
                 />
                 <FromButton
                     label="Continuar"
@@ -76,14 +76,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600',
         marginBottom: 8,
-    },
-    buttonContainer: {
-        flexDirection: 'row',
-        gap: 12,
-        marginTop: 8,
-    },
-    backButton: {
-        backgroundColor: '#6c757d',
-        flex: 1,
     }
 })
